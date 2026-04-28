@@ -3,23 +3,21 @@
 <head>
   <title>Car Rental App</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Import Supabase JS library -->
   <script src="https://unpkg.com/@supabase/supabase-js"></script>
+  <!-- Import your custom script -->
   <script src="script.js"></script>
-
 </head>
 <body>
+  <h1>Car Rental App</h1>
 
-<div id="login">
-  <h1>Car Rental App 🚗</h1>
-  <button onclick="login()">Login with Google</button>
-</div>
+  <!-- Login/Logout buttons -->
+  <button id="login" onclick="login()">Login with Google</button>
+  <button id="logout" onclick="logout()" style="display:none;">Logout</button>
 
-<div id="dashboard" class="hidden">
-  <h2>Welcome!</h2>
-  <p id="user"></p>
-  <button onclick="logout()">Logout</button>
-</div>
-
-<script src="script.js"></script>
+  <!-- Dashboard -->
+  <div id="dashboard" style="display:none;">
+    <p>Welcome, <span id="user"></span></p>
+  </div>
 </body>
 </html>
