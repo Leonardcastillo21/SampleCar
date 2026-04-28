@@ -3,11 +3,13 @@ body {
   margin: 0;
 }
 
+/* LOGIN */
 .login {
   text-align: center;
   margin-top: 100px;
 }
 
+/* NAVBAR */
 .navbar {
   background: #222;
   color: white;
@@ -20,6 +22,7 @@ body {
   margin-right: 10px;
 }
 
+/* MENU */
 .menu {
   display: none;
   background: #333;
@@ -36,10 +39,12 @@ body {
   border: none;
 }
 
+/* CONTENT */
 .content {
   padding: 20px;
 }
 
+/* HIDDEN */
 .hidden {
   display: none;
 }
