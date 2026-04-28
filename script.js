@@ -3,23 +3,27 @@ const supabase = window.supabase.createClient(
   "sb_publishable_PzkCLOqYUr8eLZtShppSrQ_K97F-rnX"
 );
 
-// LOGIN GOOGLE
-async function login() {
-  await supabase.auth.signInWithOAuth({
+// 🔥 VERY IMPORTANT (para gumana button)
+window.login = async function () {
+  console.log("LOGIN CLICKED");
+
+  const { error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
     options: {
-      redirectTo: "https://sample-car.vercel.app"
+      redirectTo: window.location.origin
     }
   });
-}
 
-// LOGOUT
-async function logout() {
+  if (error) {
+    console.error("LOGIN ERROR:", error);
+  }
+};
+
+window.logout = async function () {
   await supabase.auth.signOut();
   location.reload();
-}
+};
 
-// SHOW USER
 async function loadUser() {
   const { data } = await supabase.auth.getUser();
 
@@ -27,18 +31,14 @@ async function loadUser() {
     document.getElementById("login").style.display = "none";
     document.getElementById("dashboard").style.display = "block";
     document.getElementById("user").innerText = data.user.email;
-  }
-}
-
-// AUTO DETECT LOGIN
-supabase.auth.onAuthStateChange((event, session) => {
-  if (session) {
-    loadUser();
   } else {
     document.getElementById("login").style.display = "block";
     document.getElementById("dashboard").style.display = "none";
   }
+}
+
+supabase.auth.onAuthStateChange(() => {
+  loadUser();
 });
 
-// INIT
 loadUser();
