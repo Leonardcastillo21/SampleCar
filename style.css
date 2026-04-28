@@ -1,55 +1,14 @@
 body {
   font-family: Arial;
-  margin: 0;
-}
-
-/* LOGIN */
-.login {
   text-align: center;
   margin-top: 100px;
 }
 
-/* NAVBAR */
-.navbar {
-  background: #222;
-  color: white;
-  padding: 12px;
-  display: flex;
-  align-items: center;
-}
-
-.navbar button {
-  margin-right: 10px;
-}
-
-/* MENU */
-.menu {
-  display: none;
-  background: #333;
+button {
   padding: 10px;
+  cursor: pointer;
 }
 
-.menu button {
-  display: block;
-  width: 100%;
-  margin: 5px 0;
-  padding: 10px;
-  background: #555;
-  color: white;
-  border: none;
-}
-
-/* CONTENT */
-.content {
-  padding: 20px;
-}
-
-/* HIDDEN */
 .hidden {
   display: none;
-}
-
-button {
-  cursor: pointer;
-  padding: 10px;
 }
