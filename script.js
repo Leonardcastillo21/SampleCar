@@ -34,6 +34,9 @@ async function loadUser() {
 supabase.auth.onAuthStateChange((event, session) => {
   if (session) {
     loadUser();
+  } else {
+    document.getElementById("login").style.display = "block";
+    document.getElementById("dashboard").style.display = "none";
   }
 });
 
