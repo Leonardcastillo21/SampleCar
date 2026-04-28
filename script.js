@@ -1,43 +1,66 @@
+// 🔐 CONNECT SUPABASE
 const supabase = window.supabase.createClient(
   "https://hkjmiuymldozjgyfinef.supabase.co",
   "sb_publishable_PzkCLOqYUr8eLZtShppSrQ_K97F-rnX"
 );
 
-// LOGIN
+// 🔐 LOGIN WITH GOOGLE
 async function login() {
   await supabase.auth.signInWithOAuth({
     provider: 'google',
     options: {
-      redirectTo: window.location.origin
+      redirectTo: "https://sample-car.vercel.app" // ⚠️ PALITAN kung iba URL mo
     }
   });
 }
 
-// LOGOUT
+// 🔐 LOGOUT
 async function logout() {
   await supabase.auth.signOut();
   location.reload();
 }
 
-// TOGGLE MENU
+// 📱 MENU TOGGLE
 function toggleMenu() {
   const menu = document.getElementById("menu");
   menu.style.display = menu.style.display === "block" ? "none" : "block";
 }
 
-// CHANGE PAGE
+// 📄 PAGE CHANGE
 function show(name) {
   document.getElementById("content").innerHTML = `<h2>${name}</h2>`;
 }
 
-// CHECK USER SESSION
+// 🔍 CHECK USER (on load)
 async function checkUser() {
   const { data } = await supabase.auth.getSession();
 
   if (data.session) {
-    document.getElementById("loginPage").style.display = "none";
-    document.getElementById("dashboard").style.display = "block";
+    showDashboard();
+  } else {
+    showLogin();
   }
 }
 
+// 🔁 LISTEN LOGIN STATE (IMPORTANT FIX)
+supabase.auth.onAuthStateChange((event, session) => {
+  if (session) {
+    showDashboard();
+  } else {
+    showLogin();
+  }
+});
+
+// 🎯 UI HANDLERS
+function showDashboard() {
+  document.getElementById("loginPage").style.display = "none";
+  document.getElementById("dashboard").style.display = "block";
+}
+
+function showLogin() {
+  document.getElementById("loginPage").style.display = "block";
+  document.getElementById("dashboard").style.display = "none";
+}
+
+// 🚀 RUN
 checkUser();
