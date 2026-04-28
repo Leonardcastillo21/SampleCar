@@ -1,6 +1,6 @@
 const supabase = window.supabase.createClient(
   "https://hkjmiuymldozjgyfinef.supabase.co",
-  "sb_publishable_PzkCLOqYUr8eLZtShppSrQ_K97F-rnX"
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imhram1pdXltbGRvempneWZpbmVmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzcxNzkwODEsImV4cCI6MjA5Mjc1NTA4MX0.GconMr2mPWrvFvDFkPb4bLNbqTzObfx2r_k_IK9pSfw"
 );
 
 // 🔥 VERY IMPORTANT (para gumana button)
