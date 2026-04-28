@@ -1,0 +1,50 @@
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+.login {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.navbar {
+  background: #222;
+  color: white;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar button {
+  margin-right: 10px;
+}
+
+.menu {
+  display: none;
+  background: #333;
+  padding: 10px;
+}
+
+.menu button {
+  display: block;
+  width: 100%;
+  margin: 5px 0;
+  padding: 10px;
+  background: #555;
+  color: white;
+  border: none;
+}
+
+.content {
+  padding: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+  padding: 10px;
+}
