@@ -3,34 +3,19 @@
 <head>
   <title>Car Rental App</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
 </head>
 <body>
 
-<!-- LOGIN PAGE -->
-<div id="loginPage" class="login">
-  <h1>Car Rental App</h1>
+<div id="login">
+  <h1>Car Rental App 🚗</h1>
   <button onclick="login()">Login with Google</button>
 </div>
 
-<!-- DASHBOARD -->
 <div id="dashboard" class="hidden">
-  <div class="navbar">
-    <button onclick="toggleMenu()">☰</button>
-    Car Rental Dashboard
-  </div>
-
-  <div id="menu" class="menu">
-    <button onclick="show('Car Details')">Car Details</button>
-    <button onclick="show('Booking')">Booking</button>
-    <button onclick="show('Renter Info')">Renter Info</button>
-    <button onclick="show('Transaction')">Transaction</button>
-    <button onclick="logout()">Logout</button>
-  </div>
-
-  <div id="content" class="content">
-    Welcome to Dashboard 🚗
-  </div>
+  <h2>Welcome!</h2>
+  <p id="user"></p>
+  <button onclick="logout()">Logout</button>
 </div>
 
 <script src="script.js"></script>
