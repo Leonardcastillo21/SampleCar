@@ -1,6 +1,6 @@
 const supabase = window.supabase.createClient(
   "https://hkjmiuymldozjgyfinef.supabase.co",
-  "sb_publishable_PzkCLOqYUr8eLZtShppSrQ_K97F-rnX"
+  "PASTE_ANON_PUBLIC_KEY_HERE"
 );
 
 // LOGIN GOOGLE
