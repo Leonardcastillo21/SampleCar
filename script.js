@@ -1,10 +1,10 @@
-// ✅ Supabase client setup
+
 const supabase = window.supabase.createClient(
   "https://hkjmiuymldozjgyfinef.supabase.co",
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imhram1pdXltbGRvempneWZpbmVmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzcxNzkwODEsImV4cCI6MjA5Mjc1NTA4MX0.GconMr2mPWrvFvDFkPb4bLNbqTzObfx2r_k_IK9pSfw"
 );
 
-// 🔑 Login with Google
+
 window.login = async function () {
   console.log("LOGIN CLICKED");
 
@@ -20,7 +20,7 @@ window.login = async function () {
   }
 };
 
-// 🔑 Logout
+
 window.logout = async function () {
   await supabase.auth.signOut();
   location.reload();
